@@ -80,7 +80,15 @@ export default function Home() {
             {/* RIGHT COLUMN: 7-Day Forecast */}
             <DailyForecast weather={weather} />
           </main>
-        ) : null}
+        ) : (
+          <div className="bg-white/5 border border-white/10 rounded-3xl p-12 text-center flex flex-col items-center justify-center min-h-[400px]">
+            <CloudLightning className="w-16 h-16 text-slate-500 mb-4 opacity-50" />
+            <h2 className="text-xl font-semibold text-slate-300 mb-2">Welcome to Tempest Trends</h2>
+            <p className="text-slate-400 max-w-sm">
+              Search for a city or allow location access above to see your local weather forecast.
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
