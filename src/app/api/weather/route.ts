@@ -8,22 +8,10 @@ export async function GET(request: Request) {
 
     let city = "Manila";
     let country = "PH";
-    let finalLat = 14.5995;
-    let finalLon = 120.9842;
 
     if (q) {
         city = q.charAt(0).toUpperCase() + q.slice(1);
-        // Simple mapping for demo
-        if (city.toLowerCase() === 'cebu') {
-            finalLat = 10.3157;
-            finalLon = 123.8854;
-        } else if (city.toLowerCase() === 'davao') {
-            finalLat = 7.1907;
-            finalLon = 125.4553;
-        }
     } else if (lat && lon) {
-        finalLat = parseFloat(lat);
-        finalLon = parseFloat(lon);
         try {
             const geoRes = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en`);
             if (geoRes.ok) {
@@ -42,8 +30,6 @@ export async function GET(request: Request) {
     const mockWeatherData = {
         city: city,
         country: country,
-        lat: finalLat,
-        lon: finalLon,
         current: {
             temp: 88,
             feels_like: 95,
