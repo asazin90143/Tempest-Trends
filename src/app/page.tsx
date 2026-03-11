@@ -21,11 +21,11 @@ export default function Home() {
         },
         (error) => {
           // Fallback to a default search if geolocation is denied
-          fetchWeatherByQuery("San Francisco");
+          fetchWeatherByQuery("Manila");
         }
       );
     } else {
-      fetchWeatherByQuery("San Francisco");
+      fetchWeatherByQuery("Manila");
     }
   }, [fetchWeatherByCoords, fetchWeatherByQuery]);
 
