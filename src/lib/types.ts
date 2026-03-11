@@ -1,6 +1,8 @@
 export interface WeatherResponse {
     city: string;
     country: string;
+    lat: number;
+    lon: number;
     current: {
         temp: number;
         feels_like: number;
