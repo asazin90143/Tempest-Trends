@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import CurrentWeather from '../components/CurrentWeather';
 import { HourlyForecast, DailyForecast } from '../components/ForecastList';
+import WeatherMap from '../components/WeatherMap';
 import { useWeather } from '../hooks/useWeather';
 import { useFavorites } from '../hooks/useFavorites';
 import { CloudLightning } from 'lucide-react';
@@ -79,6 +80,11 @@ export default function Home() {
 
             {/* RIGHT COLUMN: 7-Day Forecast */}
             <DailyForecast weather={weather} />
+            
+            {/* FULL WIDTH BOTTOM: Weather Map */}
+            <div className="lg:col-span-3">
+              <WeatherMap />
+            </div>
           </main>
         ) : (
           <div className="bg-white/5 border border-white/10 rounded-3xl p-12 text-center flex flex-col items-center justify-center min-h-[400px]">
