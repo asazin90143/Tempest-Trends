@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { Search, CloudLightning } from 'lucide-react';
 
@@ -25,8 +27,14 @@ export default function Header({ onSearch }: HeaderProps) {
                 <h1 className="text-xl font-bold tracking-tight">Tempest Trends</h1>
             </div>
 
-            <form onSubmit={handleSubmit} className="w-full md:w-96 relative">
-                <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
+            <form onSubmit={handleSubmit} className="w-full md:w-96 relative flex items-center">
+                <button 
+                    type="submit" 
+                    className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400 hover:text-white transition-colors flex items-center justify-center z-10"
+                    aria-label="Search"
+                >
+                    <Search className="w-full h-full" />
+                </button>
                 <input
                     type="text"
                     placeholder="Search city or zip code..."
